@@ -1,0 +1,106 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>
+            {% block title %} Indostan Builders {% endblock %}
+        </title>
+
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+        <!-- Title icon -->
+        <link rel="shortcut icon" href="{% static 'images/indo-small.png'%}">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=STIX+Two+Text&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="{% static 'libs/morris-js/morris.css'%}"/>
+        <!-- App css -->
+        <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/icons.min.css'%}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/app.min.css'%}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    </head>
+
+    <body class="pb-0">
+        <div id="wrapper ">
+                {% include 'navbar.html' %}
+                <div class="caption">
+                  <h2>AFFORDABLE</h2>
+                  <h2 style="font-size: 35px !important;">HOME</h2>
+                  <div class="d-flex flex-row align-items-center"><span></span><h3>AT ITS</h3><span></span></div>
+                  <h2 style="font-size: 40px !important;">QUALITY</h2>
+
+                </div>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="d-block w-100" src="http://www.natebuilders.com/images/banner/slide-1.jpg" alt="First slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'images/building3.jpg' %}" alt="Second slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'images/swimming-pool.jpg' %}" alt="Third slide">
+                      </div>
+                    </div>
+                    <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a> -->
+                </div>
+            <!-- content  -->
+            {% block content %} {% endblock %}
+            {% include 'footer.html' %}
+        </div>
+        <!-- Vendor js -->
+        <script src="{% static 'js/vendor.min.js'%}"></script>
+        <script src="{% static 'libs/jquery-knob/jquery.knob.min.js'%}"></script>
+        <!-- App js -->
+        <script src="{% static 'libs/morris-js/morris.min.js'%}"></script>
+        <script src="{% static 'libs/raphael/raphael.min.js'%}"></script>
+
+        <script src="{% static 'js/pages/dashboard.init.js'%}"></script>
+        <script src="{% static 'js/app.min.js'%}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script>
+            $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
+        </script>
+        {% block script %} {% endblock %}
+        <script>
+            $(document).scroll(function() {
+            if( $(this).scrollTop() > 700 ) {
+                $('#navbar').addClass('nav-scroll shadow');
+                $('#navbar').removeClass('nav-new ');
+                $('.navbar-nav li').attr('style','background-color: #ffffff00 !important;')
+            } else {
+                $('#navbar').removeClass('nav-scroll shadow');
+                $('#navbar').addClass('nav-new ');
+                $('.navbar-nav li').attr('style','background-color: rgba(255, 255, 255, 0.11);')
+            }
+        })
+        </script>
+    </body>
+</html>
