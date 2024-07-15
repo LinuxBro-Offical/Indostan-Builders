@@ -13,24 +13,27 @@ Service Areas Page: Cities and regions where the company operates.
 **Tech Stack:**
 Backend Framework: Django
 Hosting: AWS EC2
-Installation and Setup
-Clone the Repository:
+## Installation and Setup
 
-git clone <repository-url>
-cd indostan-builders
+**Clone the Repository:**
+**git clone <repository-url>**
 
-Create and Activate a Virtual Environment:
-python3 -m venv venv
-source venv/bin/activate
+**cd indostan-builders**
+
+**Create and Activate a Virtual Environment:**
+
+**python3 -m venv venv**
+
+**source venv/bin/activate**
 
 Install Dependencies:
-pip install -r requirements.txt
+**pip install -r requirements.txt**
 
 Run Migrations:
-python manage.py migrate
-Run the Development Server:
+**python manage.py migrate**
 
-python manage.py runserver
+Run the Development Server:
+**python manage.py runserver**
 
 Access the Website:
 Open your web browser and navigate to **http://127.0.0.1:8000.**
